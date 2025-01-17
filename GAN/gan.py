@@ -37,7 +37,7 @@ def build_discriminator():
 z_dim = 100
 generator = build_generator(z_dim)
 discriminator = build_discriminator()
-cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=False)
 gen_opt = tf.keras.optimizers.Adam(learning_rate=0.0002)
 disc_opt = tf.keras.optimizers.Adam(learning_rate=0.0002)
 def train_step(real_images):
